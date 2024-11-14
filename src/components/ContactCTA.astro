@@ -6,24 +6,14 @@ import type { Props as IconProps } from "./ui/Icon/Icon.astro";
 const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/stefan-gogov/",
+    href: "https://www.linkedin.com/in/nadir-bensadi-847aab226/",
     icon: "linkedin",
   },
   {
     label: "GitHub",
-    href: "https://github.com/stekatag",
+    href: "https://github.com/Nadir-Bsd",
     icon: "github-logo",
-  },
-  {
-    label: "Personal Coding Blog",
-    href: "https://codingly.netlify.app/",
-    icon: "codeblock",
-  },
-  {
-    label: "Photography Portfolio",
-    href: "https://sgogov.com",
-    icon: "camera",
-  },
+  }
 ];
 ---
 
@@ -36,6 +26,8 @@ const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
     </p>
   </div>
   <div>
+
+    <!-- vvvv ne pas oublier ca vvvv -->
     <CallToAction href="mailto:stefangogov@proton.me">
       Send a message
       <Icon icon="message" size="1.2em" />
