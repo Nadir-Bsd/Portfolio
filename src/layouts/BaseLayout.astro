@@ -25,8 +25,7 @@ declare global {
   <head>
     <MainHead title={title} description={description} />
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B1HGX0R9YB"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B1HGX0R9YB"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -43,6 +42,9 @@ declare global {
   <body>
     <div class="stack backgrounds">
       <Nav />
+      
+      <!-- je dois etre sur d'avoir bien compris -->
+      <!-- comment fait le slot pour savoir quel page afficher quand j'appuis sur les a ? -->
       <slot />
       <Footer />
     </div>
