@@ -31,7 +31,7 @@ export default function RepoList() {
             try {
                 // tu dois etre sur d'avoir compris ca
                 const response = await fetch(
-                    "https://gh-pinned-repos-tsj7ta5xfhep.deno.dev/?username=stekatag"
+                    "https://gh-pinned-repos-tsj7ta5xfhep.deno.dev/?username=Nadir-Bsd"
                 );
                 if (!response.ok) {
                     throw new Error("Network response was not ok");
@@ -58,6 +58,7 @@ export default function RepoList() {
         fetchRepos();
     }, []);
 
+
     // tu dois etre sur d'avoir compris ca
     return (
 
@@ -76,4 +77,4 @@ export default function RepoList() {
             {error && <Alert message={error} />}
         </>
     );
-} 
+}

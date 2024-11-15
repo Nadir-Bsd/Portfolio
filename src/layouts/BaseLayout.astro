@@ -6,6 +6,7 @@
 import MainHead from "../components/MainHead.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+import Preload from "../components/preload.astro";
 
 interface Props {
   title?: string | undefined;
@@ -24,6 +25,8 @@ declare global {
 <html lang="en">
   <head>
     <MainHead title={title} description={description} />
+
+    <!-- c'est quoi google tag ? -->
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-B1HGX0R9YB"></script>
     <script>
@@ -41,10 +44,8 @@ declare global {
   </head>
   <body>
     <div class="stack backgrounds">
+      <Preload />
       <Nav />
-      
-      <!-- je dois etre sur d'avoir bien compris -->
-      <!-- comment fait le slot pour savoir quel page afficher quand j'appuis sur les a ? -->
       <slot />
       <Footer />
     </div>
