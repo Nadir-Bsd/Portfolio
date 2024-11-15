@@ -52,9 +52,10 @@ declare global {
 
     <script>
       // Add “loaded” class once the document has completely loaded.
-      addEventListener("load", () =>
+      addEventListener("load", () => {
         document.documentElement.classList.add("loaded")
-      );
+        document.getElementById("preloading-page")?.classList.add("loaded");
+      });
     </script>
 
     <style>
