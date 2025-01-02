@@ -13,6 +13,19 @@
     </div>
 </div>
 
+<script>
+      // Add “loaded” class once the document has completely loaded.
+    setTimeout(() => {
+        document.documentElement.classList.add("loaded"); 
+        
+        const loader = document.getElementById("preloading-page");
+        loader?.classList.add("loaded");
+        setTimeout(()=> {
+            loader?.classList.add("hidden");
+        }, 1500)
+    }, 2000);
+</script>
+
 <style>
     .preload{
         display: flex;
@@ -55,17 +68,16 @@
         }
     }
 
-    /* .loaded{
-        display: none;
-    } */
-
     #preloading-page {
         opacity: 1;
-        transition: opacity 3s ease-in-out;
+        transition: opacity 1.5s ease-in-out;
     }
 
     #preloading-page.loaded {
         opacity: 0;
+    }
+
+    .hidden {
         display: none;
     }
     

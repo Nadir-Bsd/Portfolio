@@ -6,7 +6,6 @@
 import MainHead from "../components/MainHead.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
-import Preload from "../components/preload.astro";
 
 interface Props {
   title?: string | undefined;
@@ -26,7 +25,6 @@ declare global {
   <head>
     <MainHead title={title} description={description} />
 
-    <!-- c'est quoi google tag ? -->
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-B1HGX0R9YB"></script>
     <script>
@@ -44,19 +42,10 @@ declare global {
   </head>
   <body>
     <div class="stack backgrounds">
-      <Preload />
       <Nav />
       <slot />
       <Footer />
     </div>
-
-    <script>
-      // Add “loaded” class once the document has completely loaded.
-      addEventListener("load", () => {
-        document.documentElement.classList.add("loaded")
-        document.getElementById("preloading-page")?.classList.add("loaded");
-      });
-    </script>
 
     <style>
       :root {
