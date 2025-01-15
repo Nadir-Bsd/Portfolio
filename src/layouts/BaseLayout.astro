@@ -6,6 +6,7 @@
 import MainHead from "../components/MainHead.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+import IsLoad from "../components/checkIsLoad";
 
 interface Props {
   title?: string | undefined;
@@ -26,7 +27,7 @@ declare global {
     <MainHead title={title} description={description} />
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B1HGX0R9YB"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-B1HGX0R9YB"></script> -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -41,10 +42,13 @@ declare global {
     </script>
   </head>
   <body>
+    <!-- check if the web app has been alredy load -->
     <div class="stack backgrounds">
-      <Nav />
-      <slot />
-      <Footer />
+      <IsLoad client:only="react" >
+        <Nav />
+        <slot />
+        <Footer />
+      </IsLoad>
     </div>
 
     <style>
