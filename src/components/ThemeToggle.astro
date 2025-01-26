@@ -73,8 +73,9 @@ import Icon from "./ui/Icon/Icon.astro";
   class ThemeToggle extends HTMLElement {
     constructor() {
       super();
-
       const button = this.querySelector("button")!;
+
+      console.log(button);
 
       /** Set the theme to dark/light mode. */
       const setTheme = (dark: boolean) => {
@@ -86,9 +87,9 @@ import Icon from "./ui/Icon/Icon.astro";
 
       // Toggle the theme when a user clicks the button.
       button.addEventListener("click", () => setTheme(!this.isDark()));
-
       // Initialize button state to reflect current theme.
       setTheme(this.isDark());
+      
     }
 
     isDark() {
