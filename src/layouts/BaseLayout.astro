@@ -6,7 +6,7 @@
 import MainHead from "../components/MainHead.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
-import  SpeedInsights  from "@vercel/speed-insights/astro"
+import Analytics from '@vercel/analytics/astro'
 
 interface Props {
   title?: string | undefined;
@@ -44,6 +44,7 @@ declare global {
   </head>
   <body>
     <!-- check if the web app has been alredy load -->
+    <Analytics />
     <div class="stack backgrounds">
         <Nav />
         <slot />
