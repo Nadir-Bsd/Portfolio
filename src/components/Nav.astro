@@ -32,15 +32,13 @@ const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
       Nadir Bensadi
     </a>
     <menu-button>
-      <template>
         <button class="menu-button" aria-expanded="false">
           <span class="sr-only">Menu</span>
           <Icon icon="list" />
         </button>
-      </template>
     </menu-button>
   </div>
-  <div id="menu-content">
+  <div id="menu-content" class="menu-content-hidden">
     <ul class="nav-items">
       {
         textLinks.map(({ label, href }) => (
@@ -144,6 +142,10 @@ const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
     right: 0;
   }
 
+  .menu-content-hidden {
+    display: none;
+  }
+
   .nav-items {
     margin: 0;
     display: flex;
@@ -223,6 +225,10 @@ const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
       font-size: var(--text-lg);
     }
 
+    .menu-button {
+      display: none;
+    }
+
     #menu-content {
       display: contents;
     }
@@ -295,3 +301,12 @@ const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
     }
   }
 </style>
+
+<script defer>
+  const menuC = document.querySelector("#menu-content")
+  document.querySelector(".menu-button").addEventListener("click", () => {
+    // modifier le display du menu-content a none
+    menuC.classList.toggle("menu-content-hidden")
+    
+  })
+</script>
