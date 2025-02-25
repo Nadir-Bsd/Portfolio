@@ -38,6 +38,12 @@
     }
   }
 
+  &__githubIcon :hover
+  {
+    background: var(--accent-regular);
+    border-radius: 20px;
+  }
+
   &__description {
     font-size: var(--text-sm);
     margin: 0.8rem 0;

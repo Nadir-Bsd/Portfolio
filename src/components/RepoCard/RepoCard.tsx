@@ -4,6 +4,7 @@ import "./RepoCard.styles.scss";
 type RepoCardProps = {
   repo: string;
   link: string;
+  website: string;
   description: string;
   language: string;
   languageColor: string;
@@ -14,6 +15,7 @@ type RepoCardProps = {
 export default function RepoCard({
   repo,
   link,
+  website,
   description,
   language,
   languageColor,
@@ -23,14 +25,16 @@ export default function RepoCard({
   return (
     <a
       className="repo-card"
-      href={link}
+      href={website}
       title="View repo"
       target="_blank"
       rel="noopener noreferrer"
     >
       <div className="repo-card__header">
         <h3 className="repo-card__title">{repo}</h3>
-        <Icon icon="github-logo" color="var(--gray-200)" size="2.5em" />
+        <a href={link} className="repo-card__githubIcon">
+          <Icon icon="github-logo" color="var(--gray-200)" size="2.7em" />
+        </a>
       </div>
       <p className="repo-card__description">{description}</p>
       <div className="repo-card__footer">

@@ -10,6 +10,7 @@ type PinnedRepos = {
     link: string;
     description: string;
     image: string;
+    website: string;
     language: string;
     languageColor: string;
     stars: number;
@@ -25,11 +26,9 @@ export default function RepoList() {
   // tu dois comprendre ca
   useEffect(() => {
 
-      // tu dois etre sur d'avoir compris ca
         const fetchRepos = async () => {
-            // tu dois comprendre ca
+
             try {
-                // tu dois etre sur d'avoir compris ca
                 const response = await fetch(
                     "https://gh-pinned-repos-tsj7ta5xfhep.deno.dev/?username=Nadir-Bsd"
                 );
@@ -58,11 +57,7 @@ export default function RepoList() {
         fetchRepos();
     }, []);
 
-
-    // tu dois etre sur d'avoir compris ca
     return (
-
-        // tu dois comprendre ca
         <>
             <div className="repos">
                 {loading ? (
